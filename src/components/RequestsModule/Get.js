@@ -112,11 +112,15 @@ export default function Requests() {
                     </div>
                     <div>
                       <h5>
-                        <div>Data {Data_Pedido}</div>
+                        <div>
+                          <strong>Data:</strong> {Data_Pedido}
+                        </div>
                       </h5>
                     </div>
                     <div>
-                      <h4 className="card-tittle">Cleinte: {Cliente}</h4>
+                      <h5 className="card-tittle">
+                        <strong>Cliente:</strong> {Cliente}
+                      </h5>
                     </div>
                   </div>
                   <div className="card-body" style={{ padding: '5px' }}>
