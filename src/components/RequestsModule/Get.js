@@ -58,7 +58,7 @@ export default function Requests() {
           <h2>Pedidos</h2>
         </div>
 
-        <div>
+        <div className="center">
           <Link to="/novopedido">
             <button
               type="button"
