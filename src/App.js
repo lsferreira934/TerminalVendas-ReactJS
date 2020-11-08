@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav';
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //Modulo Pedido
 import GetRequests from './components/RequestsModule/Get';
 import CreateRequests from './components/RequestsModule/Create';
@@ -17,8 +17,6 @@ import GetProduct from './components/ProductModule/Get';
 import UpdateProduct from './components/ProductModule/Update';
 import CreateProduct from './components/ProductModule/Create';
 import DeleteProduct from './components/ProductModule/Delete';
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export default function App() {
   return (
