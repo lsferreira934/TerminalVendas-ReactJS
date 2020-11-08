@@ -58,11 +58,21 @@ export default function Requests() {
           <h2>Pedidos</h2>
         </div>
 
-        <Link to="/novopedido">
-          <button type="button" className="btn btn-success">
-            Novo pedido
-          </button>
-        </Link>
+        <div>
+          <Link to="/novopedido">
+            <button
+              type="button"
+              className="btn btn-success"
+              style={{
+                marginTop: '4px',
+                marginBottom: '4px',
+                fontWeight: 'bold',
+              }}
+            >
+              Novo pedido
+            </button>
+          </Link>
+        </div>
         <div
           className="row"
           style={{ display: 'flex', justifyContent: 'center' }}
@@ -146,7 +156,7 @@ export default function Requests() {
                     }}
                   >
                     <h4>
-                      Valor total R$:{' '}
+                      Valor total R$:
                       {faturamento.toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',

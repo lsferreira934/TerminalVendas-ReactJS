@@ -26,11 +26,21 @@ export default function Get() {
           <h2>Cadastrar Produto</h2>
         </div>
         <div style={{ marginBottom: '20px', marginTop: '20px' }}>
-          <Link to="/cadastrarProduto">
-            <button type="button" className="btn btn-primary">
-              Adicionar
-            </button>
-          </Link>
+          <div>
+            <Link to="/cadastrarProduto">
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{
+                  marginTop: '4px',
+                  marginBottom: '4px',
+                  fontWeight: 'bold',
+                }}
+              >
+                Adicionar
+              </button>
+            </Link>
+          </div>
         </div>
         <div
           className="table-responsive"
