@@ -154,7 +154,7 @@ export default function Requests() {
                         fontWeight: 'bold',
                       }}
                     >
-                      Voltar
+                      Alterar
                     </button>
 
                     <button
