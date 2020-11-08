@@ -21,7 +21,7 @@ export default function Get() {
   }, []);
   return (
     <div>
-      <div className="container-center">
+      <div className="container">
         <div style={{ boxShadow: '10px 10px 10px', marginTop: '15px' }}>
           <h2>Cadastrar Produto</h2>
         </div>
