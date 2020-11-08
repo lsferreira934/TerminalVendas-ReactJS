@@ -54,7 +54,7 @@ export default function AddProduct(props) {
   };
 
   return (
-    <div>
+    <div className="table-responsive" style={{ boxShadow: '10px 10px 10px' }}>
       <div className="container">
         <div>
           <h2>Selecione o Produto </h2>

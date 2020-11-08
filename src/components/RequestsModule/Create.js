@@ -280,7 +280,10 @@ export default function Create() {
 
             {/* tabela produtos */}
             <div className="row" style={{ marginTop: '10px' }}>
-              <div className="col-10">
+              <div
+                className=" table-responsivecol-10"
+                style={{ boxShadow: '10px 10px 10px' }}
+              >
                 <table className="table table-hover table-dark">
                   <thead>
                     <tr>

@@ -31,7 +31,10 @@ export default function Get() {
             </button>
           </Link>
         </div>
-        <div class="table-responsive" style={{ boxShadow: '10px 10px 10px' }}>
+        <div
+          className="table-responsive"
+          style={{ boxShadow: '10px 10px 10px' }}
+        >
           <table className="table table-hover table-dark">
             <thead>
               <tr>
