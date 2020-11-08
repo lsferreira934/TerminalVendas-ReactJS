@@ -54,126 +54,131 @@ export default function AddProduct(props) {
   };
 
   return (
-    <div className="table-responsive" style={{ boxShadow: '10px 10px 10px' }}>
+    <div style={{ boxShadow: '10px 10px 10px' }}>
       <div className="container">
         <div>
           <h2>Selecione o Produto </h2>
         </div>
-        <table className="table table-hover table-dark">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nome</th>
-              <th>Qtd-Estoque</th>
-              <th>Vl-custo</th>
-              <th>Vl-Venda</th>
-              <th>Adicionar</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => {
-              const {
-                id,
-                nome,
-                qtd_estoque,
-                valor_custo,
-                valor_venda,
-              } = product;
+        <div
+          className="table-responsive"
+          style={{ boxShadow: '10px 10px 10px' }}
+        >
+          <table className="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Qtd-Estoque</th>
+                <th>Vl-custo</th>
+                <th>Vl-Venda</th>
+                <th>Adicionar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => {
+                const {
+                  id,
+                  nome,
+                  qtd_estoque,
+                  valor_custo,
+                  valor_venda,
+                } = product;
 
-              return qtd_estoque <= 0 ? (
-                <tr key={id}>
-                  <td>{id}</td>
-                  <td>{nome}</td>
-                  <td>{qtd_estoque}</td>
-                  <td>
-                    {Number(valor_custo).toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </td>
-                  <td>
-                    {Number(valor_venda).toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </td>
+                return qtd_estoque <= 0 ? (
+                  <tr key={id}>
+                    <td>{id}</td>
+                    <td>{nome}</td>
+                    <td>{qtd_estoque}</td>
+                    <td>
+                      {Number(valor_custo).toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </td>
+                    <td>
+                      {Number(valor_venda).toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </td>
 
-                  <td>
-                    <button
-                      disabled
-                      onClick={handleAddProduct}
-                      type="button"
-                      class="btn btn-danger"
-                      style={{
-                        color: 'transparent',
-                      }}
-                    >
-                      {id}
-                    </button>
-                    {redirectCheck === true ? (
-                      <Redirect to="/novopedido" />
-                    ) : (
-                      redirectCheck
-                    )}
-                  </td>
-                </tr>
-              ) : (
-                <tr key={id}>
-                  <td>{id}</td>
-                  <td>{nome}</td>
-                  <td>{qtd_estoque}</td>
-                  <td>
-                    {valor_custo.toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </td>
-                  <td>
-                    {valor_venda.toLocaleString('pt-br', {
-                      style: 'currency',
-                      currency: 'BRL',
-                    })}
-                  </td>
-                  <td>
-                    <input
-                      value={valueInput.id === id ? valueInput.qtd : 0}
-                      type="number"
-                      min="0"
-                      max={qtd_estoque}
-                      style={{
-                        color: 'black',
-                        width: '60px',
-                        fontSize: '10pt',
-                      }}
-                      onChangeCapture={(e) => {
-                        setValueInput({ id: id, qtd: e.target.value });
+                    <td>
+                      <button
+                        disabled
+                        onClick={handleAddProduct}
+                        type="button"
+                        class="btn btn-danger"
+                        style={{
+                          color: 'transparent',
+                        }}
+                      >
+                        {id}
+                      </button>
+                      {redirectCheck === true ? (
+                        <Redirect to="/novopedido" />
+                      ) : (
+                        redirectCheck
+                      )}
+                    </td>
+                  </tr>
+                ) : (
+                  <tr key={id}>
+                    <td>{id}</td>
+                    <td>{nome}</td>
+                    <td>{qtd_estoque}</td>
+                    <td>
+                      {valor_custo.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </td>
+                    <td>
+                      {valor_venda.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
+                    </td>
+                    <td>
+                      <input
+                        value={valueInput.id === id ? valueInput.qtd : 0}
+                        type="number"
+                        min="0"
+                        max={qtd_estoque}
+                        style={{
+                          color: 'black',
+                          width: '60px',
+                          fontSize: '10pt',
+                        }}
+                        onChangeCapture={(e) => {
+                          setValueInput({ id: id, qtd: e.target.value });
 
-                        // handleQuant(value, id);
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <button
-                      onClick={handleAddProduct}
-                      type="button"
-                      class="btn btn-success"
-                      style={{
-                        color: 'transparent',
-                      }}
-                    >
-                      {id}
-                    </button>
-                    {redirectCheck === true ? (
-                      <Redirect to="/novopedido" />
-                    ) : (
-                      redirectCheck
-                    )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                          // handleQuant(value, id);
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <button
+                        onClick={handleAddProduct}
+                        type="button"
+                        class="btn btn-success"
+                        style={{
+                          color: 'transparent',
+                        }}
+                      >
+                        {id}
+                      </button>
+                      {redirectCheck === true ? (
+                        <Redirect to="/novopedido" />
+                      ) : (
+                        redirectCheck
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
