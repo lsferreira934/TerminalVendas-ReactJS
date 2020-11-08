@@ -159,13 +159,15 @@ export default function Requests() {
                       margin: '4px',
                     }}
                   >
-                    <h4>
-                      Valor total R$:
-                      {faturamento.toLocaleString('pt-br', {
-                        style: 'currency',
-                        currency: 'BRL',
-                      })}
-                    </h4>
+                    <h5>
+                      Valor total R$:{' '}
+                      <strong>
+                        {faturamento.toLocaleString('pt-br', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        })}
+                      </strong>
+                    </h5>
 
                     <button
                       className="btn btn-warning"
