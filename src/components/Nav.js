@@ -61,6 +61,15 @@ export default function Nav() {
               class="nav-link"
               href="https://github.com/lsferreira934/TerminalVendas-ReactJS"
             >
+              <i class="fab fas fa-desktop"></i> Github - DeskTop
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="https://github.com/lsferreira934/TerminalVendas-ReactJS"
+            >
               <i class="fab fa-github-alt"></i> Github - Frontend
               <span class="sr-only">(current)</span>
             </a>
