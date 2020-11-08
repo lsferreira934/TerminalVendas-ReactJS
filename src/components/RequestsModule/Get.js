@@ -160,7 +160,7 @@ export default function Requests() {
                     }}
                   >
                     <h5>
-                      Valor total R$:{' '}
+                      Total:
                       <strong>
                         {faturamento.toLocaleString('pt-br', {
                           style: 'currency',
