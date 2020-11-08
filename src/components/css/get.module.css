@@ -1,0 +1,13 @@
+#update {
+  color: blue;
+  border-radius: 10px;
+}
+#delete {
+  color: red;
+  border-radius: 10px;
+}
+
+#buttonDelete {
+  width: 40px;
+  border-radius: 10px;
+}
