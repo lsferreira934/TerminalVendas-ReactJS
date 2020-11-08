@@ -59,7 +59,7 @@ export default function Nav() {
           <li class="nav-item active">
             <a
               class="nav-link"
-              href="https://github.com/lsferreira934/TerminalVendas-ReactJS"
+              href="https://github.com/lsferreira934/TP-Cadastro-ReactJs-SQL-Desktop"
             >
               <i class="fab fas fa-desktop"></i> Github - DeskTop
               <span class="sr-only">(current)</span>
