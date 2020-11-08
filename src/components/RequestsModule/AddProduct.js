@@ -56,7 +56,7 @@ export default function AddProduct(props) {
   return (
     <div>
       <div className="container">
-        <div style={{ boxShadow: '10px 10px 10px' }}>
+        <div style={{ boxShadow: '10px 10px 10px', marginBottom: '30px' }}>
           <h2>Selecione o Produto </h2>
         </div>
         <div
