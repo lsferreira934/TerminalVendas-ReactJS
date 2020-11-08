@@ -1,33 +1,28 @@
-#form { 
+#form {
   font-size: 100px;
   padding: 10px 0;
   font-family: Sans-serif;
   font-weight: bold;
   text-align: left;
   display: block;
-  color:#242323;
-  font-size:18px;
-  text-align:right;
-  padding:15px 15px 0 0;
-
-  padding:30px 30px;
-  width:450px; 
-  background:#e7e5e5;
+  color: #242323;
+  font-size: 18px;
+  text-align: right;
+  padding: 15px 15px 0 0;
+  padding: 30px 30px;
+  background: #e7e5e5;
   border-bottom: 1px double #7cd1d4;
-  border-top: 1px double  #7cd1d4;
-  border-left:1px double   #7cd1d4;
-  border-right:1px double  #7cd1d4;
+  border-top: 1px double #7cd1d4;
+  border-left: 1px double #7cd1d4;
+  border-right: 1px double #7cd1d4;
   border-radius: 5px;
-
-  
-  
 }
 
-body{
-  margin:10px;
+body {
+  margin: 10px;
 }
 
-h2{
+h2 {
   font-size: 48px;
   color: #066a75;
   padding: 10px 0;
@@ -36,67 +31,59 @@ h2{
   text-align: center;
 }
 
-h1{
-	font-size: 48px;
-	color: #066a75;
-	padding: 10px 0;
-	font-family: Sans-serif;
-	font-weight: bold;
-	text-align: center;
-  }
-
-p{
-  margin-bottom:15px;
+h1 {
+  font-size: 48px;
+  color: #066a75;
+  padding: 10px 0;
+  font-family: Sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
-p:first-child{
+
+p {
+  margin-bottom: 15px;
+}
+p:first-child {
   margin: 0px;
 }
-label{
-  display:inline-block;
+label {
+  display: inline-block;
   font-family: Sans-serif;
-  color:#181818;
-  font-size:16px;
-  text-align:left;
-  float:left;
-  padding:12px 12px 3 3;
-  
+  color: #181818;
+  font-size: 16px;
+  text-align: left;
+  float: left;
+  padding: 12px 12px 3 3;
 }
-
 
 /* Delete de produtos  */
 #formdelete {
-  margin:0 auto;
-		width:700px;
-		position:relative;
-		top:50px;
-		border:1px solid #727272;
-	}
-	
-
-	
-	
-	
-	div.formdelete label span {
-		display: block;
-		color:#242323;
-		font-size:18px;
-		float:left;
-		width:100px;
-		text-align:right;
-		padding:15px 15px 0 0;
-	}
-	
-	div.box20 .input_text {
-		padding:10px 10px;
-		width:500px;
-		background:#e0dfdf;
-		border-bottom: 1px double #b4b4b4;
-		border-top: 1px double #b4b4b4;
-		border-left:1px double #b4b4b4;
-		border-right:1px double #b4b4b4;
-
+  margin: 0 auto;
+  width: 700px;
+  position: relative;
+  top: 50px;
+  border: 1px solid #727272;
 }
 
+div.formdelete label span {
+  display: block;
+  color: #242323;
+  font-size: 18px;
+  float: left;
+  width: 100px;
+  text-align: right;
+  padding: 15px 15px 0 0;
+}
+
+div.box20 .input_text {
+  padding: 10px 10px;
+  width: 500px;
+  background: #e0dfdf;
+  border-bottom: 1px double #b4b4b4;
+  border-top: 1px double #b4b4b4;
+  border-left: 1px double #b4b4b4;
+  border-right: 1px double #b4b4b4;
+}
 
 #buttonStyle {
   display: inline-block;
@@ -106,6 +93,6 @@ label{
   line-height: 2em;
   letter-spacing: 8px;
   font-size: 1em;
-  color: #FFF;
+  color: #fff;
   border-radius: 10px;
 }

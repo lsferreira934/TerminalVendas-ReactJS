@@ -32,7 +32,7 @@ export default function Create() {
   };
   return (
     <div className="container" align="center">
-      <div id={css.form} style={{ boxShadow: '10px 10px 10px' }}>
+      <div class="row" id={css.form} style={{ boxShadow: '10px 10px 10px' }}>
         <Form onSubmit={handleSubmit}>
           <div className="form">
             <div className="form">
