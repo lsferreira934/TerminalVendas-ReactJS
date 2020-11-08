@@ -50,13 +50,13 @@ export default function Nav() {
           </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="https://tpbackendunip.herokuapp.com/">
               <i class="fab fab fa-hubspot"></i> API
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a
               class="nav-link"
               href="https://github.com/lsferreira934/TP-Cadastro-ReactJs-SQL-Desktop"
@@ -65,7 +65,7 @@ export default function Nav() {
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a
               class="nav-link"
               href="https://github.com/lsferreira934/TerminalVendas-ReactJS"
@@ -74,7 +74,7 @@ export default function Nav() {
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a
               class="nav-link"
               href="https://github.com/lsferreira934/TP-Cadastro-ReactJs-SQL-Backend"
