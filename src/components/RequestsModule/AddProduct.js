@@ -72,6 +72,7 @@ export default function AddProduct(props) {
                 <th>Vl-custo</th>
                 <th>Vl-Venda</th>
                 <th>Adicionar</th>
+                <th>Selecionar</th>
               </tr>
             </thead>
             <tbody>
