@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 import { Link, Redirect } from 'react-router-dom';
 import { FaRegPlusSquare } from 'react-icons/fa';
+import css from '../css/update.module.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -56,26 +57,35 @@ export default function AddProduct(props) {
   return (
     <div>
       <div className="container">
-        <div style={{ boxShadow: '10px 10px 10px', marginBottom: '30px' }}>
+        <div
+          style={{
+            boxShadow: '10px 10px 10px',
+            marginTop: '15px',
+            marginBottom: '30px',
+          }}
+        >
           <h2>Selecione o Produto </h2>
         </div>
         <div
           className="table-responsive"
           style={{ boxShadow: '10px 10px 10px' }}
         >
-          <table className="table table-hover table-dark">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Qtd-Estoque</th>
-                <th>Vl-custo</th>
-                <th>Vl-Venda</th>
-                <th>Adicionar</th>
-                <th>Selecionar</th>
+          <table
+            className="table table-hover table-dark"
+            style={{ marginBottom: '0px' }}
+          >
+            <thead id={css.theadEdit}>
+              <tr id={css.trEdit}>
+                <th id={css.thEditId}>ID</th>
+                <th id={css.thEdit}>Nome</th>
+                <th id={css.thEdit}>Qtd-Estoque</th>
+                <th id={css.thEdit}>Vl-Custo</th>
+                <th id={css.thEdit}>Vl-Venda</th>
+                <th id={css.thEdit}>Adicionar</th>
+                <th id={css.thEdit}>Selecionar</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id={css.tbodyEdit}>
               {products.map((product) => {
                 const {
                   id,
@@ -86,24 +96,40 @@ export default function AddProduct(props) {
                 } = product;
 
                 return qtd_estoque <= 0 ? (
-                  <tr key={id}>
-                    <td>{id}</td>
-                    <td>{nome}</td>
-                    <td>{qtd_estoque}</td>
-                    <td>
+                  <tr id={css.trBodyEdit} key={id}>
+                    <td id={css.tdBodyEdit}>{id}</td>
+                    <td id={css.tdBodyEdit}>{nome}</td>
+                    <td id={css.tdBodyEdit}>{qtd_estoque}</td>
+
+                    <td id={css.tdBodyEdit}>
                       {Number(valor_custo).toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
                     </td>
-                    <td>
+                    <td id={css.tdBodyEdit}>
                       {Number(valor_venda).toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
                     </td>
 
-                    <td>
+                    <td id={css.tdBodyEdit}>
+                      <input
+                        disabled
+                        value={valueInput.id === id ? valueInput.qtd : 0}
+                        type="number"
+                        min="0"
+                        max={qtd_estoque}
+                        style={{
+                          color: 'black',
+                          width: '60px',
+                          fontSize: '10pt',
+                        }}
+                      />
+                    </td>
+
+                    <td id={css.tdBodyEdit}>
                       <button
                         disabled
                         onClick={handleAddProduct}
@@ -123,25 +149,27 @@ export default function AddProduct(props) {
                     </td>
                   </tr>
                 ) : (
-                  <tr key={id}>
-                    <td>{id}</td>
-                    <td>{nome}</td>
-                    <td>{qtd_estoque}</td>
-                    <td>
+                  <tr id={css.trBodyEdit} key={id}>
+                    <td id={css.tdBodyEdit}>{id}</td>
+                    <td id={css.tdBodyEdit}>{nome}</td>
+                    <td id={css.tdBodyEdit}>{qtd_estoque}</td>
+
+                    <td id={css.tdBodyEdit}>
                       {valor_custo.toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
                     </td>
-                    <td>
+                    <td id={css.tdBodyEdit}>
                       {valor_venda.toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
                     </td>
-                    <td>
+
+                    <td id={css.tdBodyEdit}>
                       <input
-                        value={valueInput.id === id ? valueInput.qtd : 0}
+                        value={valueInput.id === id ? valueInput.qtd : 1}
                         type="number"
                         min="0"
                         max={qtd_estoque}
@@ -157,7 +185,7 @@ export default function AddProduct(props) {
                         }}
                       />
                     </td>
-                    <td>
+                    <td id={css.tdBodyEdit}>
                       <button
                         onClick={handleAddProduct}
                         type="button"

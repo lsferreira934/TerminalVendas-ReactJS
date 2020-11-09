@@ -32,72 +32,82 @@ export default function Create() {
   };
   return (
     <div className="container" align="center">
-      <div class="row" id={css.form} style={{ boxShadow: '10px 10px 10px' }}>
-        <Form onSubmit={handleSubmit}>
-          <div className="form">
+      <div class="row">
+        <div
+          class="col-sm-4 col-md-4 col-lg-12"
+          id={css.form}
+          style={{ boxShadow: '10px 10px 10px' }}
+        >
+          <Form onSubmit={handleSubmit}>
             <div className="form">
-              <label for="inputName">Nome</label>
+              <div className="form">
+                <label for="inputName">Nome</label>
 
-              <Input
-                type="text"
-                className="form-control"
-                id="inputName"
-                name="nome"
-                placeholder="Ex: José Marcos"
-              />
-            </div>
+                <Input
+                  type="text"
+                  className="form-control"
+                  id="inputName"
+                  name="nome"
+                  placeholder="Ex: José Marcos"
+                />
+              </div>
 
-            <div className="form">
-              <label for="inputAddress">Endereço</label>
+              <div className="form">
+                <label for="inputAddress">Endereço</label>
 
-              <Input
-                name="end"
-                type="text"
-                className="form-control"
-                id="inputAddress"
-                placeholder="Ex: Rua A, Av B"
-              />
-            </div>
+                <Input
+                  name="end"
+                  type="text"
+                  className="form-control"
+                  id="inputAddress"
+                  placeholder="Ex: Rua A, Av B"
+                />
+              </div>
 
-            <div className="form">
-              <label for="inputPhone">Telefone</label>
-              <Input
-                name="telefone"
-                type="text"
-                className="form-control"
-                id="inputPhone"
-                placeholder="Ex: 139999-8888"
-              />
+              <div className="form">
+                <label for="inputPhone">Telefone</label>
+                <Input
+                  name="telefone"
+                  type="text"
+                  className="form-control"
+                  id="inputPhone"
+                  placeholder="Ex: 139999-8888"
+                />
+              </div>
+              <div className="form">
+                <label for="inputEmail">Email</label>
+                <Input
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  id="inputEmail"
+                  placeholder="Ex: email@email.com"
+                />
+              </div>
             </div>
-            <div className="form">
-              <label for="inputEmail">Email</label>
-              <Input
-                type="email"
-                name="email"
-                className="form-control"
-                id="inputEmail"
-                placeholder="Ex: email@email.com"
-              />
-            </div>
-          </div>
-          <Link to="/cliente">
-            <button
-              type="button"
-              className="btn btn-danger"
-              style={{
-                marginRight: '10px',
-                color: 'white',
-                fontWeight: 'bold',
-              }}
-            >
-              Voltar
+            <Link to="/cliente">
+              <button
+                type="button"
+                className="btn btn-danger"
+                style={{
+                  marginRight: '10px',
+                  color: 'white',
+                  fontWeight: 'bold',
+                }}
+              >
+                Voltar
+              </button>
+            </Link>
+            <button type="submit" className="btn btn-success">
+              Cadastrar
             </button>
-          </Link>
-          <button type="submit" className="btn btn-success">
-            Cadastrar
-          </button>
-          {redirectCheck === true ? <Redirect to="/cliente" /> : redirectCheck}
-        </Form>
+            {redirectCheck === true ? (
+              <Redirect to="/cliente" />
+            ) : (
+              redirectCheck
+            )}
+          </Form>
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Input from '../Form/Input';
 import api from '../services/api';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import css from '../css/get.module.css';
+import css from '../css/update.module.css';
 import { FaTrash } from 'react-icons/fa';
 
 export default function Create() {
@@ -148,27 +148,46 @@ export default function Create() {
     }
   };
   return (
-    <>
-      <div className="container">
-        <div className="row  ">
-          <div className="col-2  col-sm-5 col-md-6 col-lg-7">
-            <label for="select" style={{ marginRight: '5px' }}>
-              PEDIDO Nº{' '}
+    <div
+      id={css.cardPedido}
+      className="container"
+      style={{
+        boxShadow: '10px 10px 10px',
+        marginTop: '15px',
+        backgroundColor: '#e7e5e5',
+        padding: '15px',
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: '#f0ecec',
+          height: '60px',
+          padding: '15px',
+          borderRadius: '8px',
+        }}
+      >
+        <div className="row justify-content-between">
+          <div className="col-12 col-sm-auto col-md-auto col-lg-auto">
+            <label for="pedido" style={{ marginRight: '5px' }}>
+              Pedido Nº
             </label>
             <input
+              id="pedido"
               type="text"
               value={numberOrder}
               disabled
-              style={{ width: '30px' }}
+              style={{ width: '30px', fontSize: '10pt' }}
             />
           </div>
-          <div className=" col col-sm-auto">
-            <label for="select" style={{ marginRight: '5px' }}>
-              VALOR DA COMPRA{' '}
+
+          <div className="col-12 col-sm-auto col-md-auto col-lg-auto">
+            <label for="valorCompra" style={{ marginRight: '4px' }}>
+              Total
             </label>
             <input
+              id="valorCompra"
               type="text"
-              style={{ width: '110px', fontSize: '10pt' }}
+              style={{ width: '107px', fontSize: '10pt' }}
               value={
                 valueTotal !== isNaN
                   ? Number(valueTotal).toLocaleString('pt-br', {
@@ -181,21 +200,26 @@ export default function Create() {
             />
           </div>
         </div>
-        {userId ? (
-          // IGUAL
+      </div>
+      {userId ? (
+        // IGUAL
+
+        <div
+          style={{
+            backgroundColor: '#f0ecec',
+
+            borderRadius: '8px',
+          }}
+        >
           <Form onSubmit={handleSubmit}>
-            <div
-              className="row"
-              style={{
-                alignItems: 'center',
-                display: 'flex',
-                placeItems: 'flex-end',
-              }}
-            >
-              <div className=" col-10 col-sm-10 center">
-                <br />
-                <label for="select">ADICIONAR CLIENTE</label>
+            <div className="row justify-content-md-center">
+              <div
+                className=" col-12 col-sm-10 col-md-10 col-lg-12 "
+                style={{ marginBottom: '10px', marginTop: '10px' }}
+              >
+                <label for="select">Adicionar Cliente</label>
                 <select
+                  style={{ fontSize: '10pt' }}
                   disabled
                   className="custom-select"
                   id="select"
@@ -204,12 +228,11 @@ export default function Create() {
                   <option>{userComplete}</option>
                 </select>
               </div>
-            </div>
 
-            <div className="row">
-              <div className=" col-10 col-sm-10">
-                <label for="Textarea">OBSERVAÇÃO</label>
+              <div className=" col-12 col-sm-10 col-md-10 col-lg-12">
+                <label for="Textarea">Observação</label>
                 <Input
+                  style={{ fontSize: '10pt' }}
                   multiline
                   name="obs"
                   className="form-control"
@@ -218,9 +241,11 @@ export default function Create() {
                 />
               </div>
             </div>
-
-            <div className="row" style={{ marginTop: '10px' }}>
-              <div className="col-6">
+            <div
+              className="row justify-content-md-center"
+              style={{ marginBottom: '20px', marginTop: '20px' }}
+            >
+              <div className="col-12 col-sm-10 col-md-10 col-lg-12">
                 <Link to={`/adicionarproduto/${userId}/${numberOrder}`}>
                   <button
                     type="button"
@@ -229,6 +254,8 @@ export default function Create() {
                       marginRight: '10px',
                       color: 'white',
                       fontWeight: 'bold',
+                      height: '4rem',
+                      width: '12rem',
                     }}
                   >
                     Adicionar produto
@@ -242,6 +269,8 @@ export default function Create() {
                     marginRight: '10px',
                     color: 'white',
                     fontWeight: 'bold',
+                    height: '4rem',
+                    width: '12rem',
                   }}
                 >
                   Finalizar pedido
@@ -254,6 +283,8 @@ export default function Create() {
                       marginRight: '10px',
                       color: 'white',
                       fontWeight: 'bold',
+                      height: '4rem',
+                      width: '12rem',
                     }}
                   >
                     Cadastrar cliente
@@ -269,6 +300,8 @@ export default function Create() {
                       marginRight: '10px',
                       color: 'white',
                       fontWeight: 'bold',
+                      height: '4rem',
+                      width: '12rem',
                     }}
                   >
                     Cancelar Pedido
@@ -276,91 +309,95 @@ export default function Create() {
                 </Link>
               </div>
             </div>
-            {/* // IGUAL */}
 
-            {/* tabela produtos */}
-            <div className="row" style={{ marginTop: '10px' }}>
-              <div
-                className=" table-responsivecol-10"
-                style={{ boxShadow: '10px 10px 10px' }}
-              >
-                <table className="table table-hover table-dark">
-                  <thead>
-                    <tr>
-                      <th>Produto</th>
-                      <th>Quantidade</th>
-                      <th>valor Unidade</th>
-                      <th>Valor Total</th>
-                      <th>Deletar</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {getOrderId.map((order) => {
-                      const {
-                        id,
-                        id_pedido,
-                        id_produto,
-                        quantidade,
-                        valor_unidade,
-                        valor_total,
-                      } = order;
-                      return (
-                        <tr key={id}>
-                          <td>{id_produto}</td>
-                          <td>{quantidade}</td>
-                          <td>
-                            {valor_unidade.toLocaleString('pt-br', {
-                              style: 'currency',
-                              currency: 'BRL',
-                            })}
-                          </td>
-                          <td>
-                            {valor_total.toLocaleString('pt-br', {
-                              style: 'currency',
-                              currency: 'BRL',
-                            })}
-                          </td>
-                          <td>
-                            <button
-                              onClick={(e) => {
-                                handleDeleteProduct(e, id_produto, quantidade);
-                              }}
-                              type="button"
-                              className="btn btn-danger"
-                              value={id}
-                              style={{
-                                color: 'white',
-                                fontWeight: 'bold',
-                              }}
-                            >
-                              Apagar
-                            </button>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+            <div
+              className="row justify-content-md-center"
+              style={{ marginBottom: '20px', marginTop: '20px' }}
+            >
+              <div className="col-12 col-sm-10 col-md-10 col-lg-12">
+                <div className=" table-responsive">
+                  <table
+                    className="table table-hover table-dark"
+                    style={{ marginBottom: '0px' }}
+                  >
+                    <thead id={css.theadEdit}>
+                      <tr id={css.trEdit}>
+                        <th id={css.thEditId}>ID Produto</th>
+                        <th id={css.thEdit}>Quantidade</th>
+                        <th id={css.thEdit}>Valor por Unidade</th>
+                        <th id={css.thEdit}>Valor Total</th>
+                        <th id={css.thEditApgPedido}>Apagar</th>
+                      </tr>
+                    </thead>
+                    <tbody id={css.tbodyEdit}>
+                      {getOrderId.map((order) => {
+                        const {
+                          id,
+                          id_pedido,
+                          id_produto,
+                          quantidade,
+                          valor_unidade,
+                          valor_total,
+                        } = order;
+                        return (
+                          <tr id={css.trBodyEdit} key={id}>
+                            <td id={css.tdBodyEdit}>{id_produto}</td>
+                            <td id={css.tdBodyEdit}>{quantidade}</td>
+                            <td id={css.tdBodyEdit}>
+                              {valor_unidade.toLocaleString('pt-br', {
+                                style: 'currency',
+                                currency: 'BRL',
+                              })}
+                            </td>
+                            <td id={css.tdBodyEdit}>
+                              {valor_total.toLocaleString('pt-br', {
+                                style: 'currency',
+                                currency: 'BRL',
+                              })}
+                            </td>
+                            <td id={css.tdBodyEditPedido}>
+                              <button
+                                onClick={(e) => {
+                                  handleDeleteProduct(
+                                    e,
+                                    id_produto,
+                                    quantidade
+                                  );
+                                }}
+                                type="button"
+                                className="btn btn-danger"
+                                value={id}
+                                style={{
+                                  color: 'white',
+                                  fontWeight: 'bold',
+                                }}
+                              >
+                                Apagar
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 
             {redirectCheck === true ? <Redirect to="/" /> : redirectCheck}
           </Form>
-        ) : (
-          // IGUAL
+        </div>
+      ) : (
+        <div>
           <Form onSubmit={handleSubmit}>
-            <div
-              className="row"
-              style={{
-                alignItems: 'center',
-                display: 'flex',
-                placeItems: 'flex-end',
-              }}
-            >
-              <div className=" col-10 col-sm-10 center">
-                <br />
-                <label for="select">ADICIONAR CLIENTE</label>
+            <div className="row justify-content-md-center">
+              <div
+                className=" col-12 col-sm-10 col-md-10 col-lg-12 "
+                style={{ marginBottom: '10px', marginTop: '10px' }}
+              >
+                <label for="select">Adicionar Cliente</label>
                 <select
+                  style={{ fontSize: '10pt' }}
                   onChange={handleSelectOption}
                   className="custom-select"
                   id="select"
@@ -378,28 +415,22 @@ export default function Create() {
                 </select>
               </div>
             </div>
-
-            {/* aqui */}
-            <div className="row">
-              <div className=" col-10 col-sm-10">
-                <label for="Textarea">OBSERVAÇÃO</label>
-                <Input
-                  multiline
-                  name="obs"
-                  className="form-control"
-                  id="Textarea"
-                  placeholder="Ex: Cartão de crédito "
-                />
-              </div>
-            </div>
-
-            <div className="row" style={{ marginTop: '10px' }}>
-              <div className="col-6">
+            <div
+              className="row justify-content-md-center"
+              style={{ marginBottom: '20px', marginTop: '20px' }}
+            >
+              <div className="col-12 col-sm-10 col-md-10 col-lg-12">
                 <Link to={`/adicionarproduto/${userId}/${numberOrder}`}>
                   <button
                     type="button"
                     className="btn btn-primary"
-                    style={{ marginRight: '10px' }}
+                    style={{
+                      marginRight: '10px',
+                      color: 'white',
+                      fontWeight: 'bold',
+                      height: '4rem',
+                      width: '12rem',
+                    }}
                   >
                     Adicionar produto
                   </button>
@@ -412,6 +443,8 @@ export default function Create() {
                     marginRight: '10px',
                     color: 'white',
                     fontWeight: 'bold',
+                    height: '4rem',
+                    width: '12rem',
                   }}
                 >
                   Finalizar pedido
@@ -424,6 +457,8 @@ export default function Create() {
                       marginRight: '10px',
                       color: 'white',
                       fontWeight: 'bold',
+                      height: '4rem',
+                      width: '12rem',
                     }}
                   >
                     Cadastrar cliente
@@ -438,6 +473,8 @@ export default function Create() {
                       marginRight: '10px',
                       color: 'white',
                       fontWeight: 'bold',
+                      height: '4rem',
+                      width: '12rem',
                     }}
                   >
                     Voltar
@@ -448,11 +485,11 @@ export default function Create() {
             <div className="row" style={{ marginTop: '10px' }}>
               <div className="col-10"></div>
             </div>
-            {/* // IGUAL */}
+
             {redirectCheck === true ? <Redirect to="/" /> : redirectCheck}
           </Form>
-        )}
-      </div>
-    </>
+        </div>
+      )}
+    </div>
   );
 }

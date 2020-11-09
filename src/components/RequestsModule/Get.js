@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import css from '../css/get.module.css';
 import api from '../services/api';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';

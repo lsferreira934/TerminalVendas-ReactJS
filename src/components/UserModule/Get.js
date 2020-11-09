@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import css from '../css/get.module.css';
+
 import api from '../services/api';
 import { Link } from 'react-router-dom';
-
+import css from '../css/update.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Get() {
@@ -45,30 +45,33 @@ export default function Get() {
           className="table-responsive"
           style={{ boxShadow: '10px 10px 10px' }}
         >
-          <table className="table table-hover table-dark">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Endereço</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Atualizar</th>
-                <th>Deletar</th>
+          <table
+            className="table table-hover table-dark"
+            style={{ marginBottom: '0px' }}
+          >
+            <thead id={css.theadEdit}>
+              <tr id={css.trEdit}>
+                <th id={css.thEditId}>ID</th>
+                <th id={css.thEdit}>Nome</th>
+                <th id={css.thEdit}>Endereço</th>
+                <th id={css.thEdit}>Telefone</th>
+                <th id={css.thEdit}>Email</th>
+                <th id={css.thEditAlt}>Alterar</th>
+                <th id={css.thEditApg}>Apagar</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id={css.tbodyEdit}>
               {users.map((user) => {
                 const { id, nome, end, telefone, email } = user;
 
                 return (
-                  <tr key={id}>
-                    <td>{id} </td>
-                    <td>{nome}</td>
-                    <td>{end}</td>
-                    <td>{telefone}</td>
-                    <td>{email}</td>
-                    <td>
+                  <tr id={css.trBodyEdit} key={id}>
+                    <td id={css.tdBodyEdit}>{id} </td>
+                    <td id={css.tdBodyEdit}>{nome}</td>
+                    <td id={css.tdBodyEdit}>{end}</td>
+                    <td id={css.tdBodyEdit}>{telefone}</td>
+                    <td id={css.tdBodyEdit}>{email}</td>
+                    <td id={css.tdBodyEditAlt}>
                       <Link to={`/alterarCliente/${id}`}>
                         <button
                           type="button"
@@ -83,7 +86,7 @@ export default function Get() {
                       </Link>
                     </td>
 
-                    <td>
+                    <td id={css.tdBodyEdit}>
                       <Link to={`/deletarCliente/${id}`}>
                         <button
                           type="button"
