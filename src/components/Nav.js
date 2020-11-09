@@ -12,12 +12,17 @@ export default function Nav() {
         <a class="navbar-brand" href="#">
           <img
             src={Jpg}
-            height="45"
+            height="44"
             class="rounded-circle z-depth-0"
             alt="avatar image"
           />
         </a>
       </Link>
+      <div>
+        <h1 class="h5" style={{ color: 'white' }}>
+          Terminal Vendas
+        </h1>
+      </div>
 
       <button
         class="navbar-toggler"
@@ -30,7 +35,11 @@ export default function Nav() {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent-555"
+        style={{ fontSize: '11pt' }}
+      >
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="/">

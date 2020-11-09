@@ -10,8 +10,8 @@ export default function AddProduct(props) {
   const [products, setProducts] = useState([]);
   const [redirectCheck, setRedirecCheck] = useState(false);
   const [valueInput, setValueInput] = useState({
-    id: 0,
-    qtd: 0,
+    id: 1,
+    qtd: 1,
   });
 
   useEffect(() => {
@@ -169,9 +169,9 @@ export default function AddProduct(props) {
 
                     <td id={css.tdBodyEdit}>
                       <input
-                        value={valueInput.id === id ? valueInput.qtd : 1}
+                        value={valueInput.qtd}
                         type="number"
-                        min="0"
+                        min="1"
                         max={qtd_estoque}
                         style={{
                           color: 'black',
@@ -179,6 +179,11 @@ export default function AddProduct(props) {
                           fontSize: '10pt',
                         }}
                         onChangeCapture={(e) => {
+                          if (e.target.value <= 0) {
+                            let value = Number(e.target.value) + 1;
+                            console.log(value);
+                            setValueInput({ id: id, qtd: value });
+                          }
                           setValueInput({ id: id, qtd: e.target.value });
 
                           // handleQuant(value, id);

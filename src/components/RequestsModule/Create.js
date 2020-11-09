@@ -189,7 +189,7 @@ export default function Create() {
               type="text"
               style={{ width: '107px', fontSize: '10pt' }}
               value={
-                valueTotal !== isNaN
+                isNaN(valueTotal) !== true
                   ? Number(valueTotal).toLocaleString('pt-br', {
                       style: 'currency',
                       currency: 'BRL',
@@ -437,6 +437,7 @@ export default function Create() {
                 </Link>
 
                 <button
+                  disabled
                   type="submit"
                   className="btn btn-warning"
                   style={{

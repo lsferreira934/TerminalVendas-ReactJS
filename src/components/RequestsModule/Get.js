@@ -40,10 +40,8 @@ export default function Requests() {
             };
           }
         );
-
-        setRequests(dataMap);
-
         console.log(dataMap);
+        setRequests(dataMap);
       } catch (error) {
         console.log(error);
       }
@@ -131,10 +129,12 @@ export default function Requests() {
                         padding: '10px',
                       }}
                     >
-                      {prvlqt.map((item) => {
+                      {prvlqt.map((item, i) => {
                         const { qtd, produto, vl } = item;
+
                         return (
                           <p
+                            key={i}
                             style={{
                               fontWeight: 'bold',
                               color: 'black',
@@ -159,16 +159,15 @@ export default function Requests() {
                     }}
                   >
                     <h5>
-                      Total:
-                      <strong>
-                        {faturamento.toLocaleString('pt-br', {
-                          style: 'currency',
-                          currency: 'BRL',
-                        })}
-                      </strong>
+                      <strong>Total:</strong>
+                      {faturamento.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
+                      })}
                     </h5>
 
                     <button
+                      disabled
                       className="btn btn-warning"
                       style={{
                         color: 'white',
@@ -179,6 +178,7 @@ export default function Requests() {
                     </button>
 
                     <button
+                      disabled
                       className="btn btn-danger"
                       style={{
                         marginTop: '4px',

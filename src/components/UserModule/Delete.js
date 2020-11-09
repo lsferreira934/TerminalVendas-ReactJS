@@ -44,7 +44,15 @@ export default function Delete(props) {
   };
   return (
     <div className="container center" align="center">
-      <h2>Deseja apagar o seguinte cadastro?</h2>
+      <div
+        style={{
+          boxShadow: '10px 10px 10px',
+          marginTop: '15px',
+          marginBottom: '15px',
+        }}
+      >
+        <h2>Apagar Cliente</h2>
+      </div>
       <div id={css.form} style={{ boxShadow: '10px 10px 10px' }}>
         <Form initialData={initialData} onSubmit={handleSubmit}>
           <div className="form">
