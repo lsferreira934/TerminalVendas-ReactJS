@@ -1,3 +1,25 @@
+# PROJETO VENDAS REACTJS
+
+# Cadastro de Clientes
+
+![Gravar_2020_11_09_21_44_48_875](https://user-images.githubusercontent.com/56802012/98614566-75869780-22d7-11eb-9a8e-908e430ba1e3.gif)
+
+# Cadastro de produtos
+
+![Produtos](https://user-images.githubusercontent.com/56802012/98614803-f5acfd00-22d7-11eb-8705-f1cb3fc1dc11.gif)
+
+
+# Pedidos
+
+![Pedido](https://user-images.githubusercontent.com/56802012/98614743-cb5b3f80-22d7-11eb-8a48-e61a287c3386.gif)
+
+
+
+# Por quê?
+Mini Programa feito para estudo usando ReactJs + Bootstrap, realizando CRUD. Projeto criado para aplicação de conhecimento em ReactJS.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
