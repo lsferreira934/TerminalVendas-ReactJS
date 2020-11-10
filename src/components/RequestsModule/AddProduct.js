@@ -169,7 +169,7 @@ export default function AddProduct(props) {
 
                     <td id={css.tdBodyEdit}>
                       <input
-                        value={valueInput.qtd}
+                        value={valueInput.id === id ? valueInput.qtd : 0}
                         type="number"
                         min="1"
                         max={qtd_estoque}
